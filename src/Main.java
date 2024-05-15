@@ -33,5 +33,20 @@ public class Main {
         for (String uniqueWord : uniqueWords) {
             System.out.print(uniqueWord + ' ');
         }
+        System.out.println("\nTask 4");
+        List<String> strings = new ArrayList<>(List.of("один", "два","ДВА", "три", "Три", "ТРИ"));
+        HashSet<String> uniqueStrings = new HashSet<>();
+        for (String string : strings) {
+            uniqueStrings.add(string.toLowerCase());
+        }
+        for (String uniqueString : uniqueStrings) {
+            int i = 0;
+            for (String string : strings) {
+                if (uniqueString.equalsIgnoreCase(string)) {
+                    i++;
+                }
+            }
+            System.out.println("Слово '" + uniqueString + "' встречается " + i + " раз");
+        }
     }
 }
